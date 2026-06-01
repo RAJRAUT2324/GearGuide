@@ -88,7 +88,7 @@ The backend runs on the configured `PORT` environment variable.
 ## 4. Frontend (React + Vite)
 
 ```bash
-cd frontend
+cd ../frontend
 
 npm install
 
