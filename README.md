@@ -26,9 +26,16 @@ GearGuide is a high-fidelity industrial monitoring system that combines machine 
 - Node.js (v18+)
 - Python (v3.10+)
 - Git
+- MongoDB
 
-### 1. AI Service (Python Backend)
+---
+
+## 1. Clone the Repository
+
 ```bash
+git clone https://github.com/RAJRAUT2324/GearGuide.git
+cd GearGuide
+```
 
 cd ai_service
 
@@ -44,40 +51,94 @@ python main.py
 python -m venv .venv
 source .venv/Scripts/activate # Windows: .venv\Scripts\activate
 # Install dependencies
+---
+
+## 2. AI Service (Python Backend)
+
+### Windows (PowerShell)
+
+```powershell
+cd ai_service
+
+python -m venv .venv
+
+.venv\Scripts\Activate.ps1
+
 pip install -r requirements.txt
-# Run service
+
 python main.py
 ```
 
-### 2. Node Backend (Proxy & API)
+### Linux/macOS
+
+```bash
+cd ai_service
+
+python3 -m venv .venv
+
+source .venv/bin/activate
+
+pip install -r requirements.txt
+
+python main.py
+```
+
+---
+
+## 3. Node Backend (Proxy & API)
+
 ```bash
 cd backend
+
 npm install
+
 node server.js
 ```
 
-### 3. Frontend (React + Vite)
+The backend runs on the configured `PORT` environment variable.
+
+---
+
+## 4. Frontend (React + Vite)
+
 ```bash
-cd frontend
+cd ../frontend
+
 npm install
+
 npm run dev
 ```
 
 ---
 
-## ⚠️ Configuration (IMPORTANT)
+## ⚠️ Environment Variables
 
-This project requires environment variables for AI features. Ensure the following files are configured (they are ignored by git for security):
+Create `.env` files using the provided `.env.example` templates.
 
 ### `ai_service/.env`
+
 ```env
-GROQ_API_KEY=your_key_here
-OPENAI_API_KEY=your_key_here
-HF_TOKEN=your_token_here (optional)
+GROQ_API_KEY=your_groq_api_key
+ML_DATABASE_URL=sqlite:///ml_database.db
 ```
 
 ### `backend/.env`
-*(If applicable, ensure database URLs and tokens are set here)*
+
+```env
+PORT=5000
+MONGO_URI=mongodb://127.0.0.1:27017/gearguide
+JWT_SECRET=your_jwt_secret
+```
+
+---
+
+## Backend Environment Variables
+
+| Variable | Description |
+|---|---|
+| PORT | Port used by the Node backend |
+| MONGO_URI | MongoDB connection string |
+| JWT_SECRET | Secret key used for JWT authentication |
 
 ---
 
