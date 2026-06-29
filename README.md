@@ -37,6 +37,20 @@ git clone https://github.com/RAJRAUT2324/GearGuide.git
 cd GearGuide
 ```
 
+cd ai_service
+
+# Create and activate virtual environment
+python -m venv .venv
+source .venv/Scripts/activate # Windows: .venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run service
+python main.py
+python -m venv .venv
+source .venv/Scripts/activate # Windows: .venv\Scripts\activate
+# Install dependencies
 ---
 
 ## 2. AI Service (Python Backend)
