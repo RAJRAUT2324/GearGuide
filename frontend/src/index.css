@@ -97,4 +97,161 @@
 .grid-bg {
   background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
   background-size: 24px 24px;
-}
+}
+
+  /* ==========================================
+   Responsive Utilities
+   Append at the end of index.css
+========================================== */
+
+/* Large Tablets */
+@media (max-width: 1024px) {
+  .glass-panel {
+    @apply rounded-[2rem] p-6;
+  }
+
+  .glass-card {
+    @apply rounded-[1.75rem];
+  }
+
+  .btn-premium,
+  .btn-premium-outline {
+    @apply px-6 py-3 text-[9px];
+  }
+
+  .heading-display {
+    letter-spacing: -0.04em;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  .glass-panel {
+    @apply rounded-3xl p-5;
+  }
+
+  .glass-card {
+    @apply rounded-2xl;
+  }
+
+  .btn-premium,
+  .btn-premium-outline {
+    @apply w-full justify-center px-5 py-3 text-[9px];
+  }
+
+  .heading-display {
+    @apply tracking-tight;
+  }
+
+  .grid-bg {
+    background-size: 18px 18px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+
+  .glass-panel {
+    @apply rounded-2xl p-4;
+  }
+
+  .glass-card {
+    @apply rounded-xl;
+  }
+
+  .btn-premium,
+  .btn-premium-outline {
+    @apply w-full px-4 py-3 text-[8px] tracking-wide;
+  }
+
+  .heading-display {
+    @apply tracking-normal;
+  }
+
+  .grid-bg {
+    background-size: 16px 16px;
+  }
+
+  .neon-text-cyan,
+  .neon-text-rose {
+    filter: none;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+
+  .glass-panel {
+    @apply rounded-xl p-3;
+  }
+
+  .glass-card {
+    @apply rounded-lg;
+  }
+
+  .btn-premium,
+  .btn-premium-outline {
+    @apply text-[8px] py-2.5 px-3 rounded-xl;
+  }
+
+  .grid-bg {
+    background-size: 14px 14px;
+  }
+}
+
+/* Very Small Devices */
+@media (max-width: 360px) {
+  body {
+    font-size: 12px;
+  }
+
+  .glass-panel,
+  .glass-card {
+    @apply rounded-lg p-2;
+  }
+
+  .btn-premium,
+  .btn-premium-outline {
+    @apply py-2 px-2 text-[7px];
+  }
+}
+
+/* Landscape Phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .glass-panel,
+  .glass-card {
+    @apply p-4;
+  }
+
+  .btn-premium,
+  .btn-premium-outline {
+    @apply py-2;
+  }
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
